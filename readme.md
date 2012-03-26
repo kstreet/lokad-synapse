@@ -25,3 +25,5 @@ environment (like Windows Azure).
 * You need to have something that writes to an event stream in format of Lokad.CQRS (included) AND 
 keeps ver file updated.
 * All hail ZeroMQ for the connectivity.
+* [abdullin] I know that file tape stream is sub-efficient (although human-readable), 
+and that the entire thing could (should) be improved. This is not the priority though :)

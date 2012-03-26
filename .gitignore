@@ -1,0 +1,17 @@
+obj
+bin
+*.user
+*.suo
+*.orig
+output
+publish
+packages
+_ReSharper.*
+*.Resharper
+*.Cache
+*.cache
+~$*
+*~
+*.pidb
+*.userprefs
+test-results

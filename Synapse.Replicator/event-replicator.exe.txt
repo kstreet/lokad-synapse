@@ -1,0 +1,1 @@
+﻿C:\data\hub-store\hub-shared\domain.tmd|hub|tcp://localhost:8080|tcp://watchtower.lokad.com:8080

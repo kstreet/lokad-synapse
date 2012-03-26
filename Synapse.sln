@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "event-replicator", "Synapse.Replicator\event-replicator.csproj", "{B045C485-F263-4041-9879-36F915C86179}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "event-store", "Synapse.Store\event-store.csproj", "{6AF271B3-677F-496A-B78D-E263570698EF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B045C485-F263-4041-9879-36F915C86179}.Debug|x86.ActiveCfg = Debug|x86
+		{B045C485-F263-4041-9879-36F915C86179}.Debug|x86.Build.0 = Debug|x86
+		{B045C485-F263-4041-9879-36F915C86179}.Release|x86.ActiveCfg = Release|x86
+		{B045C485-F263-4041-9879-36F915C86179}.Release|x86.Build.0 = Release|x86
+		{6AF271B3-677F-496A-B78D-E263570698EF}.Debug|x86.ActiveCfg = Debug|x86
+		{6AF271B3-677F-496A-B78D-E263570698EF}.Debug|x86.Build.0 = Debug|x86
+		{6AF271B3-677F-496A-B78D-E263570698EF}.Release|x86.ActiveCfg = Release|x86
+		{6AF271B3-677F-496A-B78D-E263570698EF}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

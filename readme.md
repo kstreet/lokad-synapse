@@ -1,5 +1,7 @@
-Lokad Synapse Prototype
+Lokad Synapse Prototype (NOT an event store)!
 =======================
+
+This is not an event store. 
 
 This is a prototype (or sample) of a simple set of servers that know how
 to replicate events stored in Lokad.CQRS tape stream format.

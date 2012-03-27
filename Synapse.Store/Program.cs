@@ -64,7 +64,7 @@ namespace EventStore
                     Console.WriteLine("Terminating....");
                     cts.Cancel();
 
-                    if (!Task.WaitAll(new[] {writerTask,}, 5000))
+                    if (!Task.WaitAll(new[] {writerTask}, 5000))
                     {
                         Console.WriteLine("Termination failed");
                     }
@@ -128,10 +128,13 @@ namespace EventStore
                         sock = factory();
                     }
 
-
-                    var op = sock.Recv(Encoding.UTF8, 1000);
+                    var op = sock.Recv(Encoding.UTF8, new[]{SendRecvOpt.NOBLOCK, });
                     if (null == op)
+                    {
+                        token.WaitHandle.WaitOne(500);
                         continue;
+                    }
+                        
 
                     switch (op)
                     {
@@ -148,9 +151,12 @@ namespace EventStore
                 }
                 catch (Exception ex)
                 {
+
                     // context is shutting down
                     if (ex.Errno == (int) ERRNOS.ETERM)
                         return;
+
+                    Console.WriteLine(ex);
                     if (null != sock)
                     {
                         sock.Dispose();

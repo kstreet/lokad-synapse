@@ -25,7 +25,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="clrzmq">
-      <HintPath>..\Library\clrzmq.dll</HintPath>
+      <HintPath>..\Library\clrzmq-x86\clrzmq.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -38,7 +38,7 @@
     <Folder Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="..\Library\libzmq.dll">
+    <Content Include="..\Library\clrzmq-x86\libzmq.dll">
       <Link>libzmq.dll</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

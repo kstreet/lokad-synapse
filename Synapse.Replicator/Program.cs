@@ -181,9 +181,9 @@ namespace EventTest
 
         public long GetVersion(string name)
         {
-            var sock = GetSocket();
             try
             {
+                var sock = GetSocket();
                 sock.SendMore("Version", Encoding.UTF8);
                 sock.Send(name, Encoding.UTF8);
                 var result = _socket.Recv(2000);
@@ -203,6 +203,9 @@ namespace EventTest
 
         void ClearSocket()
         {
+            if (_socket == null)
+                return;
+
             _socket.Dispose();
             _socket = null;
         }

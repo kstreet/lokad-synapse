@@ -38,7 +38,7 @@ namespace EventTest
                 Environment.Exit(1);
             }
 
-            var file = args[0];
+            var file = Path.GetFullPath(args[0]);
             var name = args[1];
 
             using (var ctx = new Context())

@@ -28,7 +28,7 @@ namespace event_store_worker
         {
             var s = _tapeStreamFactory(name);
 
-            Trace.WriteLine("Append {0}", name);
+            Trace.WriteLine(string.Format("Appending to {0}:", name));
 
             var lastVersion = 0L;
             while (true)
@@ -38,12 +38,15 @@ namespace event_store_worker
                     break;
 
                 var version = BitConverter.ToInt64(versionBytes, 0);
-                Trace.WriteLine("  " + version);
 
                 var cond = TapeAppendCondition.VersionIs(version);
                 var data = receive();
-                if (s.TryAppend(data, cond))
-                    lastVersion = version;
+
+                if (!s.TryAppend(data, cond))
+                    continue;
+
+                Trace.WriteLine("  " + (version + 1));
+                lastVersion = version;
             }
 
             return lastVersion;

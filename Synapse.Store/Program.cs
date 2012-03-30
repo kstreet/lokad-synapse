@@ -105,11 +105,12 @@ namespace EventStore
                     break;
 
                 var version = BitConverter.ToInt64(verDat, 0);
-                Console.WriteLine("  " + version);
                 var data = sock.Recv();
 
                 var cond = TapeAppendCondition.VersionIs(version);
                 result = s.TryAppend(data, cond);
+                if (result != 0)
+                    Console.WriteLine("  " + result);
             }
             s.UpdateCounter(result);
             sock.Send(BitConverter.GetBytes(result));
